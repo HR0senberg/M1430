@@ -1,0 +1,1441 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<krpano version="1.19-pr16">
+
+    
+  <!-- Spot Style - Default Point Spot Style -->
+
+
+  <style name="IconDefaultPointSpotStyle"
+         url="%FIRSTXML%/spots/hotspot_animated_user_defaultpoint0.png"
+         visible="false"
+         frame="0"
+         lastframe="19"
+         framewidth="64"
+         frameheight="64"
+         stopspotsequence="false"
+         crop="0|0|64|64"
+         edge="center"
+         onloaded="startspotanimation(0.1);"
+         onhover="onhoverIconDefaultPointSpotStyle"
+         onout="onoutIconDefaultPointSpotStyle"
+
+
+         />
+  <action name="onhoverIconDefaultPointSpotStyle">
+    showtooltip('hotspot');
+  </action>
+  <action name="onoutIconDefaultPointSpotStyle">
+    hideTooltip();
+
+
+
+  </action>
+
+
+
+      
+  <!-- Picture Spot Style - Default Picture Spot Style -->
+
+  <style name="RectPictureDefaultPictureSpotStyle"
+         distorted="true"
+         visible="false"
+         scale="1.0" 
+         />
+
+
+
+        
+  <!-- Video Spot Style - экраны -->
+  <style name="RectVideoэкраны"
+         capture="false"
+         visible="false"
+         distorted="true"
+         scale="1.0"
+         url.flash="%SWFPATH%/graphics/videoplayer.swf"
+         url.html5="%FIRSTXML%/graphics/videoplayer.js"
+         loop="true"
+         autoresume="true"
+         pausedonstart="true"
+         pausedonstart.android="false"
+         pauseothersounds="false"
+         canstart="false"
+         onhover="onhoverRectVideoэкраны"
+         onout="onoutRectVideoэкраны"
+         onvideoready="onvideoreadyRectVideoэкраны"
+         />
+  <style name="RectVideoэкраны" 
+    directionalsound="true" 
+    range="90" 
+    devices="flash" 
+  />
+  <style name="RectVideoэкраны" 
+    directionalsound="false" 
+    devices="html5" 
+  />
+  <style name="RectVideoэкраны" stateVideo="startplaying" devices="no-ios"/>
+  <style name="RectVideoэкраны" stateVideo="startpaused"  devices="ios"   />
+  <style name="RectVideoэкраны" stateVideo="startplaying" devices="ios10" />
+  <action name="onhoverRectVideoэкраны">
+    showTooltip('hotspot');
+  </action>
+  <action name="onoutRectVideoэкраны">
+    hideTooltip();
+  </action>
+  <action name="onvideoreadyRectVideoэкраны">
+    set(isVideoReadyForPlaying, false);
+    if (isvideoready,
+      if(panovideospotsstate,set(canstart, true););
+      if (canstart,
+        set(isVideoReadyForPlaying, true);
+      );
+    );
+    if(isVideoReadyForPlaying,
+
+    if(tour_displayspots,
+      if(ispaused,
+        if(stateVideo == "startplaying",
+          set(stateVideo, "playing");
+          play();
+        );
+      );
+    );
+    if(device.flash OR (device.webgl AND !device.ios),
+      if (tour_soundson,
+        div(volume, tour_soundsvolume, 100);
+      ,
+        set(volume, 0);
+      );
+    ,
+      ifnot(device.ios,
+        if (tour_soundson,
+          js(kpanotour.Sounds.startVideosSounds(get(volume)));
+        ,
+          js(kpanotour.Sounds.stopVideosSounds());
+        );
+      );
+    );
+    ,
+
+      delayedcall(0.5,onvideoreadyRectVideoэкраны());
+    );
+  </action>
+
+
+
+    
+  <!-- Spot Style - left -->
+
+
+  <style name="Iconleft"
+         url="%FIRSTXML%/spots/hotspot_direction_sequence_user_defaultpoint1.png"
+         visible="false"
+         frame="0"
+         lastframe="11"
+         framewidth="50"
+         frameheight="50"
+         stopspotsequence="false"
+         crop="0|0|50|50"
+         edge="center"
+         rotate="180"
+         alpha="0.8"
+         onloaded="startspotanimation(0.1);"
+         onover="onoverIconleft"
+         onout="onoutIconleft"
+
+
+         />
+  <action name="onoverIconleft">
+tween(scale, 1.2);
+tween(alpha, 1);
+
+  </action>
+  <action name="onoutIconleft">
+    tween(scale, 1);
+    tween(alpha, 0.8);
+
+  </action>
+
+
+
+    
+  <!-- Spot Style - right -->
+
+
+  <style name="Iconright"
+         url="%FIRSTXML%/spots/hotspot_direction_sequence_user_defaultpoint2.png"
+         visible="false"
+         frame="0"
+         lastframe="11"
+         framewidth="50"
+         frameheight="50"
+         stopspotsequence="false"
+         crop="0|0|50|50"
+         edge="center"
+         alpha="0.8"
+         onloaded="startspotanimation(0.1);"
+         onover="onoverIconright"
+         onout="onoutIconright"
+
+
+         />
+  <action name="onoverIconright">
+tween(scale, 1.2);
+tween(alpha, 1);
+
+  </action>
+  <action name="onoutIconright">
+    tween(scale, 1);
+    tween(alpha, 0.8);
+
+  </action>
+
+
+
+    
+  <!-- Spot Style - video -->
+
+
+  <style name="Iconvideo"
+         url="%FIRSTXML%/spots/hotspot_video_sequence_user_defaultpoint4.png"
+         visible="false"
+         frame="0"
+         lastframe="21"
+         framewidth="66"
+         frameheight="66"
+         stopspotsequence="false"
+         crop="0|0|66|66"
+         edge="center"
+         onloaded="startspotanimation(0.1);"
+         onhover="onhoverIconvideo"
+         onover="onoverIconvideo"
+         onout="onoutIconvideo"
+
+
+         />
+  <action name="onhoverIconvideo">
+    showtooltip('hotspot');
+  </action>
+  <action name="onoverIconvideo">
+tween(scale, 1.2);
+
+pauseautorotation(forcehotspot);
+
+  </action>
+  <action name="onoutIconvideo">
+    hideTooltip();
+    tween(scale, 1);
+
+resumeautorotation(forcehotspot);
+
+  </action>
+
+
+
+      
+  <!-- Picture Spot Style - экраны -->
+
+  <style name="RectPictureэкраны"
+         distorted="true"
+         visible="false"
+         scale="1.0" 
+         />
+
+
+
+    
+  <!-- Spot Style - foto -->
+
+
+  <style name="Iconfoto"
+         url="%FIRSTXML%/spots/hotspot_image_sequence_user_defaultpoint5.png"
+         visible="false"
+         frame="0"
+         lastframe="18"
+         framewidth="66"
+         frameheight="66"
+         stopspotsequence="false"
+         crop="0|0|66|66"
+         edge="center"
+         onloaded="startspotanimation(0.1);"
+         onhover="onhoverIconfoto"
+         onover="onoverIconfoto"
+         onout="onoutIconfoto"
+
+
+         />
+  <action name="onhoverIconfoto">
+    showtooltip('hotspot');
+  </action>
+  <action name="onoverIconfoto">
+tween(scale, 1.2);
+
+
+  </action>
+  <action name="onoutIconfoto">
+    hideTooltip();
+    tween(scale, 1);
+
+
+  </action>
+
+
+
+    
+  <!-- Spot Style - выход -->
+
+
+  <style name="Iconвыход"
+         url="%FIRSTXML%/spots/exrus_user_defaultpoint9.png"
+         visible="false"
+         edge="center"
+         onhover="onhoverIconвыход"
+         onout="onoutIconвыход"
+
+         height="90"
+         width="90"
+         />
+  <action name="onhoverIconвыход">
+    showtooltip('hotspot');
+  </action>
+  <action name="onoutIconвыход">
+    hideTooltip();
+
+
+
+  </action>
+
+
+
+    
+  <!-- Spot Style - ичёрн -->
+
+
+  <style name="Iconичёрн"
+         url="%FIRSTXML%/spots/hotspot_animated_user_defaultpoint15.png"
+         visible="false"
+         frame="0"
+         lastframe="19"
+         framewidth="64"
+         frameheight="64"
+         stopspotsequence="false"
+         crop="0|0|64|64"
+         edge="center"
+         onloaded="startspotanimation(0.1);"
+         onhover="onhoverIconичёрн"
+         onout="onoutIconичёрн"
+
+
+         />
+  <action name="onhoverIconичёрн">
+    showtooltip('hotspot');
+  </action>
+  <action name="onoutIconичёрн">
+    hideTooltip();
+
+
+
+  </action>
+
+
+
+    
+  <!-- Spot Style - info -->
+
+
+  <style name="Iconinfo"
+         url="%FIRSTXML%/spots/hotspot_information_sequence_user_defaultpoint18.png"
+         visible="false"
+         frame="0"
+         lastframe="9"
+         framewidth="42"
+         frameheight="67"
+         stopspotsequence="false"
+         crop="0|0|42|67"
+         edge="center"
+         onloaded="startspotanimation(0.1);"
+         onhover="onhoverIconinfo"
+         onover="onoverIconinfo"
+         onout="onoutIconinfo"
+
+         height="40"
+         width="40"
+         />
+  <action name="onhoverIconinfo">
+    showtooltip('hotspot');
+  </action>
+  <action name="onoverIconinfo">
+
+
+pauseautorotation(forcehotspot);
+
+  </action>
+  <action name="onoutIconinfo">
+    hideTooltip();
+
+
+resumeautorotation(forcehotspot);
+
+  </action>
+
+
+
+    
+  <!-- Spot Style - аудиогид -->
+
+
+  <style name="Iconаудиогид"
+         url="%FIRSTXML%/spots/_1221994_user_defaultpoint19.png"
+         visible="false"
+         edge="center"
+         alpha="0.8"
+         onhover="onhoverIconаудиогид"
+         onover="onoverIconаудиогид"
+         onout="onoutIconаудиогид"
+
+         height="70"
+         width="70"
+         />
+  <action name="onhoverIconаудиогид">
+    showtooltip('hotspot');
+  </action>
+  <action name="onoverIconаудиогид">
+tween(scale, 1.2);
+tween(alpha, 1);
+pauseautorotation(forcehotspot);
+
+  </action>
+  <action name="onoutIconаудиогид">
+    hideTooltip();
+    tween(scale, 1);
+    tween(alpha, 0.8);
+resumeautorotation(forcehotspot);
+
+  </action>
+
+
+
+    
+  <!-- Spot Style - gal01 -->
+
+
+  <style name="Icongal01"
+         url="%FIRSTXML%/spots/hotspot_information_sequence_user_defaultpoint20.png"
+         visible="false"
+         frame="0"
+         lastframe="9"
+         framewidth="42"
+         frameheight="67"
+         stopspotsequence="false"
+         crop="0|0|42|67"
+         edge="center"
+         onloaded="startspotanimation(0.1);"
+         onhover="onhoverIcongal01"
+         onover="onoverIcongal01"
+         onout="onoutIcongal01"
+
+         height="40"
+         width="40"
+         />
+  <action name="onhoverIcongal01">
+    showtooltip('hotspot');
+  </action>
+  <action name="onoverIcongal01">
+
+
+pauseautorotation(forcehotspot);
+
+  </action>
+  <action name="onoutIcongal01">
+    hideTooltip();
+
+
+resumeautorotation(forcehotspot);
+
+  </action>
+
+
+
+    
+  <!-- Spot Style - gal02 -->
+
+
+  <style name="Icongal02"
+         url="%FIRSTXML%/spots/hotspot_information_sequence_user_defaultpoint21.png"
+         visible="false"
+         frame="0"
+         lastframe="9"
+         framewidth="42"
+         frameheight="67"
+         stopspotsequence="false"
+         crop="0|0|42|67"
+         edge="center"
+         onloaded="startspotanimation(0.1);"
+         onhover="onhoverIcongal02"
+         onover="onoverIcongal02"
+         onout="onoutIcongal02"
+
+         height="40"
+         width="40"
+         />
+  <action name="onhoverIcongal02">
+    showtooltip('hotspot');
+  </action>
+  <action name="onoverIcongal02">
+
+
+pauseautorotation(forcehotspot);
+
+  </action>
+  <action name="onoutIcongal02">
+    hideTooltip();
+
+
+resumeautorotation(forcehotspot);
+
+  </action>
+
+
+
+    
+  <!-- Spot Style - gal03 -->
+
+
+  <style name="Icongal03"
+         url="%FIRSTXML%/spots/hotspot_information_sequence_user_defaultpoint22.png"
+         visible="false"
+         frame="0"
+         lastframe="9"
+         framewidth="42"
+         frameheight="67"
+         stopspotsequence="false"
+         crop="0|0|42|67"
+         edge="center"
+         onloaded="startspotanimation(0.1);"
+         onhover="onhoverIcongal03"
+         onover="onoverIcongal03"
+         onout="onoutIcongal03"
+
+         height="40"
+         width="40"
+         />
+  <action name="onhoverIcongal03">
+    showtooltip('hotspot');
+  </action>
+  <action name="onoverIcongal03">
+
+
+pauseautorotation(forcehotspot);
+
+  </action>
+  <action name="onoutIcongal03">
+    hideTooltip();
+
+
+resumeautorotation(forcehotspot);
+
+  </action>
+
+
+
+  <!-- Fullscreen Management -->
+  <action name="exitFullScreen" devices="fullscreensupport">set(tour_fullscreen,false);js(setFullscreen(false));</action>
+  <action name="enterFullScreen" devices="fullscreensupport">set(tour_fullscreen,true);js(setFullscreen(true));</action>
+  <action name="switchFullScreen">if(tour_fullscreen,exitFullScreen();,enterFullScreen(););</action>
+
+  
+  <events name="krpanoExitFullscreenEvent"
+    onexitfullscreen="if(tour_fullscreen,exitFullScreenChangeEvent(););"
+    keep="true" />
+
+  <action name="exitFullScreenChangeEvent" devices="fullscreensupport">set(tour_fullscreen,false);events.dispatch(onexitfullscreen);</action>
+  <action name="enterFullScreenChangeEvent" devices="fullscreensupport">set(tour_fullscreen,true);events.dispatch(onenterfullscreen);</action>
+  <action name="exitFullScreenFallback">set(fullscreen,false);</action>
+  <action name="enterFullScreenFallback">set(fullscreen,true);</action>
+  
+  <action name="resizeFullScreenEvent">delayedcall(0,updatescreen(););</action>
+
+  <action name="displayImage">
+    if (layer[displayedStandardImage],
+      if(layer[displayedStandardImage].doNotDeleteMe,
+        set(layer[displayedStandardImage].currentCall, false);
+        set(layer[displayedStandardImage].doNotDeleteMe, false);
+        
+        if (%1 == layer[displayedStandardImage].url,
+          applyDisplayedImageObjectAnimation(%8);
+        ,
+          setDisplayedImageObjectParameters(%1, %2, %3, %4, %5, %6, %7, %8, %9, %10);
+        );
+      ,
+        set(layer[displayedStandardImage].currentCall, false);
+        set(layer[displayedStandardImage].doNotDeleteMe, true);
+        events.dispatch(onremovedisplayedobject);
+        delayedcall(0.2,displayImage(%1, %2, %3, %4, %5, %6, %7, %8, %9, %10, %11, %12););
+      );
+    ,
+      if(%10,
+        addlayer(displayedStandardImageOverlay);
+        set(layer[displayedStandardImageOverlay].keep, false);
+        set(layer[displayedStandardImageOverlay].width, 100%);
+        set(layer[displayedStandardImageOverlay].height, 100%);
+        set(layer[displayedStandardImageOverlay].type, container);
+        set(layer[displayedStandardImageOverlay].zorder, 98);
+        set(layer[displayedStandardImageOverlay].visible, false);
+        set(layer[displayedStandardImageOverlay].onclick, applyDisplayedImageObjectAnimation(%8););
+        set(layer[displayedStandardImageOverlay].bgcolor, "0x%11");
+        set(layer[displayedStandardImageOverlay].bgalpha, %12);
+        set(layer[displayedStandardImageOverlay].bgcapture, true);
+      );
+      addlayer(displayedStandardImage);
+      set(layer[displayedStandardImage].keep, false);
+      set(layer[displayedStandardImage].onclick, applyDisplayedImageObjectAnimation(%8););
+      set(layer[displayedStandardImage].zorder , 99);
+      set(layer[displayedStandardImage].currentCall, true);
+      set(layer[displayedStandardImage].doNotDeleteMe, true);
+      set(layer[displayedStandardImage].onloaded, resizeDisplayedImageObject());
+      events.dispatch(onremovedisplayedobject);
+      delayedcall(0.2,displayImage(%1, %2, %3, %4, %5, %6, %7, %8, %9, %10, %11, %12););
+      set(layer[displayedStandardImage].visible, false);
+    );
+  </action>
+  <action name="applyDisplayedImageObjectAnimation">resumeautorotation(forcehotspot);
+
+    if (%1,
+      stoptween(layer[displayedStandardImage].width, layer[displayedStandardImage].height);
+      tween(layer[displayedStandardImage].width|layer[displayedStandardImage].height, 1|1, 1, easeOutQuad, WAIT);
+      if(layer[displayedStandardImage].overlay,removelayer(displayedStandardImageOverlay););removelayer(displayedStandardImage);
+    ,
+      if(layer[displayedStandardImage].overlay,removelayer(displayedStandardImageOverlay););removelayer(displayedStandardImage);
+    );
+  </action>
+  <action name="setDisplayedImageObjectParameters">
+    set(layer[displayedStandardImage].url       , %1);
+    set(layer[displayedStandardImage].align     , %2);
+    set(layer[displayedStandardImage].x         , %3);
+    set(layer[displayedStandardImage].y         , %4);
+    set(layer[displayedStandardImage].imgwidth  , %5);
+    set(layer[displayedStandardImage].imgheight , %6);
+    set(layer[displayedStandardImage].animated  , %8);
+    set(layer[displayedStandardImage].applyratio, %9);
+    set(layer[displayedStandardImage].overlay   , %10);
+    if (%7,pauseautorotation(forcehotspot);
+);
+  </action>
+  <action name="resizeDisplayedImageObject">
+    if(layer[displayedStandardImage].url,
+    set(layer[displayedStandardImage].fullwidth, get(layer[displayedStandardImage].width));
+    set(layer[displayedStandardImage].fullheight, get(layer[displayedStandardImage].height));
+    if(layer[displayedStandardImage].animated,
+      set(layer[displayedStandardImage].width , 1);
+      set(layer[displayedStandardImage].height, 1);
+    );
+    if(layer[displayedStandardImage].imgwidth != "" AND layer[displayedStandardImage].imgheight != "",
+      if(layer[displayedStandardImage].imgwidth == "prop",
+        set(tempDisplayedImageObjectHeight, get(layer[displayedStandardImage].imgheight));
+        indexoftxt(tempDisplayedImageObjectHeightPercent, get(tempDisplayedImageObjectHeight), "%");
+        if(tempDisplayedImageObjectHeightPercent GT 0,
+          txtreplace(tempDisplayedImageObjectHeight, '%', '');
+          mul(tempDisplayedImageObjectHeight, get(stageheight));
+          div(tempDisplayedImageObjectHeight, 100);
+          Math.round(tempDisplayedImageObjectHeight);
+        );
+        mul(flyingImgWidth,get(layer[displayedStandardImage].fullwidth),get(tempDisplayedImageObjectHeight));
+        div(flyingImgWidth,get(layer[displayedStandardImage].fullheight));
+        Math.round(flyingImgWidth);
+        set(layer[displayedStandardImage].imgwidth , get(flyingImgWidth));
+        set(layer[displayedStandardImage].imgheight, get(tempDisplayedImageObjectHeight));
+      ,
+        if(layer[displayedStandardImage].imgheight == "prop",
+          set(tempDisplayedImageObjectWidth, get(layer[displayedStandardImage].imgwidth));
+          indexoftxt(tempDisplayedImageObjectWidthPercent, get(tempDisplayedImageObjectWidth), "%");
+          if(tempDisplayedImageObjectWidthPercent GT 0,
+            txtreplace(tempDisplayedImageObjectWidth, '%', '');
+            mul(tempDisplayedImageObjectWidth, get(stagewidth));
+            div(tempDisplayedImageObjectWidth, 100);
+            Math.round(tempDisplayedImageObjectWidth);
+          );
+          mul(flyingImgHeight,get(layer[displayedStandardImage].fullheight),get(tempDisplayedImageObjectWidth));
+          div(flyingImgHeight,get(layer[displayedStandardImage].fullwidth));
+          Math.round(flyingImgHeight);
+          set(layer[displayedStandardImage].imgwidth , get(tempDisplayedImageObjectWidth));
+          set(layer[displayedStandardImage].imgheight , get(flyingImgHeight));
+        ,
+          set(tempDisplayedImageObjectWidth, get(layer[displayedStandardImage].imgwidth));
+          set(tempDisplayedImageObjectHeight, get(layer[displayedStandardImage].imgheight));
+          indexoftxt(tempDisplayedImageObjectWidthPercent, get(tempDisplayedImageObjectWidth), "%");
+          indexoftxt(tempDisplayedImageObjectHeightPercent, get(tempDisplayedImageObjectHeight), "%");
+          if(tempDisplayedImageObjectWidthPercent GT 0,
+            txtreplace(tempDisplayedImageObjectWidth, '%', '');
+            mul(tempDisplayedImageObjectWidth, get(stagewidth));
+            div(tempDisplayedImageObjectWidth, 100);
+            Math.round(tempDisplayedImageObjectWidth);
+          );
+          if(tempDisplayedImageObjectHeightPercent GT 0,
+            txtreplace(tempDisplayedImageObjectHeight, '%', '');
+            mul(tempDisplayedImageObjectHeight, get(stageheight));
+            div(tempDisplayedImageObjectHeight, 100);
+            Math.round(tempDisplayedImageObjectHeight);
+          );
+          set(layer[displayedStandardImage].imgwidth , get(tempDisplayedImageObjectWidth));
+          set(layer[displayedStandardImage].imgheight, get(tempDisplayedImageObjectHeight));
+        );
+      );
+    ,
+      set(layer[displayedStandardImage].imgwidth , get(layer[displayedStandardImage].fullwidth));
+      set(layer[displayedStandardImage].imgheight, get(layer[displayedStandardImage].fullheight));
+    );
+    
+    set(resizedwidth, get(layer[displayedStandardImage].imgwidth));
+    set(resizedheight, get(layer[displayedStandardImage].imgheight));
+    if(layer[displayedStandardImage].applyratio,
+      sub(resizedstagewidth, get(stagewidth), get(layer[displayedStandardImage].x));
+      sub(resizedstageheight, get(stageheight), get(layer[displayedStandardImage].y));
+      Math.abs(resizedstagewidth);
+      Math.abs(resizedstageheight);
+      if(resizedwidth GT resizedstagewidth,
+        mul(tempresizedheight, get(resizedheight), get(resizedstagewidth));
+        div(tempresizedheight, get(resizedwidth));
+        Math.round(tempresizedheight);
+        set(resizedwidth, get(resizedstagewidth));
+        set(resizedheight, get(tempresizedheight));
+      );
+      if(resizedheight GT resizedstageheight,
+        mul(tempresizedwidth, get(resizedwidth), get(resizedstageheight));
+        div(tempresizedwidth, get(resizedheight));
+        Math.round(tempresizedwidth);
+        set(resizedheight, get(resizedstageheight));
+        set(resizedwidth, get(tempresizedwidth));
+      );
+    );
+    
+    if(layer[displayedStandardImage].animated,
+      set(layer[displayedStandardImage].animated, false);
+      tween(layer[displayedStandardImage].width , get(resizedwidth), 1, easeOutQuad);
+      tween(layer[displayedStandardImage].height, get(resizedheight), 1, easeOutQuad);
+    ,
+      set(layer[displayedStandardImage].width , get(resizedwidth));
+      set(layer[displayedStandardImage].height, get(resizedheight));
+    );
+    if(layer[displayedStandardImage].overlay,set(layer[displayedStandardImageOverlay].visible, true););
+    set(layer[displayedStandardImage].visible, true);
+    ,
+      delayedcall(0.2,resizeDisplayedImageObject(););
+    );
+  </action>
+  <events name="displayedImageObjectEvents" keep="true" onremovedisplayedobject="displayedImageObjectOnRemoveDisplayedObject" onresize="if(layer[displayedStandardImage],resizeDisplayedImageObject());" />
+  <action name="displayedImageObjectOnRemoveDisplayedObject">
+    ifnot(layer[displayedStandardImage].currentCall,if(layer[displayedStandardImage].visible,resumeautorotation(forcehotspot);
+
+      if(layer[displayedStandardImage].overlay,removelayer(displayedStandardImageOverlay););
+      removelayer(displayedStandardImage);
+    ););
+  </action>
+
+
+  <action name="displayVideo">
+    set(displayedVideoObjectToCreate, true);
+    set(displayedVideoObjectForDesktop, true);
+    if(%10,
+      set(displayedVideoObjectForDesktop, false);
+    ,
+      if (device.tablet, set(displayedVideoObjectForDesktop, false););
+      if (device.mobile, set(displayedVideoObjectForDesktop, false););
+    );
+    
+    if (layer[displayedStandardVideo],
+      if(layer[displayedStandardVideo].donotdeleteme,
+        set(layer[displayedStandardVideo].fromdesktop, get(displayedVideoObjectForDesktop));
+        set(layer[displayedStandardVideo].currentCall, false);
+        set(layer[displayedStandardVideo].visible, true);
+        if(layer[displayedStandardVideo].overlay,set(layer[displayedStandardVideoOverlayBkg].visible, true););
+        set(layer[displayedStandardVideo].donotdeleteme, false);
+        set(layer[displayedStandardVideo].pausebgsound, %11);
+        ifnot(layer[displayedStandardVideo].pausedonstart,
+          if(layer[displayedStandardVideo].pausebgsound,
+            pauseTourSoundsActions(true,true,false,true,true);
+          );
+        );
+        if (%1 == layer[displayedStandardVideo].videourl,
+          layer[displayedStandardVideo].stop();
+          ifnot(layer[displayedStandardVideo].fromdesktop,
+            removelayer(displayedStandardVideoOverlayButton);
+            removelayer(displayedStandardVideoOverlay);
+          );resumeautorotation(forcehotspot);
+
+          delete(tour_current_played_video);
+          set(tour_current_played_video_state, 0);
+          if(layer[displayedStandardVideo].pausebgsound,
+            resumeTourSoundsActions(true,true,true,true,true);
+          );
+          if(layer[displayedStandardVideo].overlay,removelayer(displayedStandardVideoOverlayBkg););
+          removelayer(displayedStandardVideo);
+        ,
+          
+          set(tour_current_played_video, %1);
+          if(tour_current_played_sound,
+            set(tour_current_played_video_state, 2);
+          ,
+            set(tour_current_played_video_state, 1);
+          );
+          set(layer[displayedStandardVideo].onloaded, displayVideoWhenLoaded(%1,%10););
+          set(layer[displayedStandardVideo].autoresume, true);
+          if(device.html5,
+            set(layer[displayedStandardVideo].url, %FIRSTXML%/graphics/videoplayer.js);
+          ,
+            set(layer[displayedStandardVideo].url, %SWFPATH%/graphics/videoplayer.swf);
+          );
+        );
+      ,
+        events.dispatch(onremovedisplayedobject);
+        if (%1 != layer[displayedStandardVideo].videourl,
+          delayedcall(0.2,displayVideo(%1, %2, %3, %4, %5, %6, %7, %8, %9, %10, %11, %12, %13, %14););
+        );
+      );
+    ,
+      if(%12,
+        addlayer(displayedStandardVideoOverlayBkg);
+        set(layer[displayedStandardVideoOverlayBkg].keep, false);
+        set(layer[displayedStandardVideoOverlayBkg].visible , false);
+        set(layer[displayedStandardVideoOverlayBkg].onclick, displayedVideoObjectStartStopAction(););
+        set(layer[displayedStandardVideoOverlayBkg].zorder , 97);
+        set(layer[displayedStandardVideoOverlayBkg].type, container);
+        set(layer[displayedStandardVideoOverlayBkg].width   , 100%);
+        set(layer[displayedStandardVideoOverlayBkg].height  , 100%);
+        set(layer[displayedStandardVideoOverlayBkg].bgcolor, "0x%13");
+        set(layer[displayedStandardVideoOverlayBkg].bgalpha, %14);
+        set(layer[displayedStandardVideoOverlayBkg].bgcapture, true);
+      );
+      addlayer(displayedStandardVideo);
+      set(layer[displayedStandardVideo].keep, false);
+      set(layer[displayedStandardVideo].visible , false);
+      set(layer[displayedStandardVideo].onclick, displayedVideoObjectStartStopAction(););
+      set(layer[displayedStandardVideo].zorder , 98);
+      set(layer[displayedStandardVideo].align   , %2);
+      set(layer[displayedStandardVideo].x       , %3);
+      set(layer[displayedStandardVideo].y       , %4);
+      set(layer[displayedStandardVideo].width   , %5);
+      set(layer[displayedStandardVideo].height  , %6);
+      set(layer[displayedStandardVideo].overlay , %12);
+      set(layer[displayedStandardVideo].iphoneworkarounds, false);
+      
+      if (%7,
+        set(layer[displayedStandardVideo].loop, true);
+       ,
+        set(layer[displayedStandardVideo].onvideocomplete, displayedVideoObjectStartStopAction(););
+      );
+      if (displayedVideoObjectForDesktop,
+        set(layer[displayedStandardVideo].pausedonstart, false);
+        set(layer[displayedStandardVideo].onvideoready, set(layer[displayedStandardVideo].visible, true);if(layer[displayedStandardVideo].overlay,set(layer[displayedStandardVideoOverlayBkg].visible, true);););
+      ,
+        
+        set(layer[displayedStandardVideo].pausedonstart, true);
+        set(layer[displayedStandardVideo].onvideoready, set(layer[displayedStandardVideo].started, false);set(layer[displayedStandardVideo].visible, true);if(layer[displayedStandardVideo].overlay,set(layer[displayedStandardVideoOverlayBkg].visible, true););delayedcall(0.1,applyDisplayedStandardVideoOverlay(%1, %2, %3, %4, %5, %6, %7, %8, %9, %10, %11)););
+      );
+      
+      set(layer[displayedStandardVideo].currentCall, true);
+      set(layer[displayedStandardVideo].donotdeleteme, true);
+      events.dispatch(onremovedisplayedobject);
+      delayedcall(0.2,displayVideo(%1, %2, %3, %4, %5, %6, %7, %8, %9, %10, %11, %12, %13, %14););
+      if (%8,pauseautorotation(forcehotspot);
+);
+    );
+  </action>
+  <action name="applyDisplayedStandardVideoOverlay">
+      addlayer(displayedStandardVideoOverlay);
+      
+      set(layer[displayedStandardVideoOverlay].type, container);
+      set(layer[displayedStandardVideoOverlay].visible, true);
+      set(layer[displayedStandardVideoOverlay].zorder, 99);
+      set(layer[displayedStandardVideoOverlay].keep, false);
+      set(layer[displayedStandardVideoOverlay].align, %2);
+      set(layer[displayedStandardVideoOverlay].x, %3);
+      set(layer[displayedStandardVideoOverlay].y, %4);
+      set(layer[displayedStandardVideoOverlay].width, get(layer[displayedStandardVideo].pixelwidth));
+      set(layer[displayedStandardVideoOverlay].height, get(layer[displayedStandardVideo].pixelheight));
+      
+      addlayer(displayedStandardVideoOverlayButton);
+      set(layer[displayedStandardVideoOverlayButton].visible, true);
+      set(layer[displayedStandardVideoOverlayButton].keep, false);
+      set(layer[displayedStandardVideoOverlayButton].parent, displayedStandardVideoOverlay);
+      set(layer[displayedStandardVideoOverlayButton].align, center);
+      set(layer[displayedStandardVideoOverlayButton].url, %FIRSTXML%/graphics/videoplayer_play_button.png);
+      set(layer[displayedStandardVideoOverlayButton].width, 50);
+      set(layer[displayedStandardVideoOverlayButton].height, 50);
+      set(layer[displayedStandardVideoOverlayButton].alpha, 0.5);
+      set(layer[displayedStandardVideoOverlayButton].enabled, false);
+      set(layer[displayedStandardVideoOverlayButton].capture, false);
+      set(layer[displayedStandardVideoOverlayButton].onclick, displayedVideoObjectStartStopAction(););
+  </action>
+  <action name="displayVideoWhenLoaded">
+    layer[displayedStandardVideo].playVideo(%1,,%2);
+    ifnot(tour_soundson,
+      pauseVideoActionsSounds();
+    );
+  </action>
+  <action name="displayedVideoObjectStartStopAction">
+    if(layer[displayedStandardVideo].fromdesktop,
+      layer[displayedStandardVideo].stop();
+      set(layer[displayedStandardVideo].visible, false);
+      if(layer[displayedStandardVideo].overlay,set(layer[displayedStandardVideoOverlayBkg].visible, false););resumeautorotation(forcehotspot);
+
+      delete(tour_current_played_video);
+      set(tour_current_played_video, null);
+      set(tour_current_played_video_state, 0);
+      if(layer[displayedStandardVideo].pausebgsound,
+        resumeTourSoundsActions(true,true,true,true,true);
+      );
+      if(layer[displayedStandardVideo].overlay,removelayer(displayedStandardVideoOverlayBkg););
+      removelayer(displayedStandardVideo);
+    ,
+      if (layer[displayedStandardVideo].started == false,
+        set(layer[displayedStandardVideo].visible , true);
+        if(layer[displayedStandardVideo].overlay,set(layer[displayedStandardVideoOverlayBkg].visible, true););
+        set(layer[displayedStandardVideoOverlay].visible , false);
+        removelayer(displayedStandardVideoOverlayButton);
+        removelayer(displayedStandardVideoOverlay);
+        set(layer[displayedStandardVideo].started, true);
+        if(layer[displayedStandardVideo].pausedonstart,
+          if(layer[displayedStandardVideo].pausebgsound,
+            pauseTourSoundsActions(true,true,false,true,true);
+          );
+        );
+        layer[displayedStandardVideo].play();
+        ifnot(tour_soundson,
+          pauseVideoActionsSounds();
+        );
+      ,
+        layer[displayedStandardVideo].stop();
+        set(layer[displayedStandardVideo].visible , false);
+        if(layer[displayedStandardVideo].overlay,set(layer[displayedStandardVideoOverlayBkg].visible, false););resumeautorotation(forcehotspot);
+
+        delete(tour_current_played_video);
+        set(tour_current_played_video, null);
+        set(tour_current_played_video_state, 0);
+        if(layer[displayedStandardVideo].pausebgsound,
+          resumeTourSoundsActions(true,true,true,true,true);
+        );
+        if(layer[displayedStandardVideo].overlay,removelayer(displayedStandardVideoOverlayBkg););
+        removelayer(displayedStandardVideo);
+      );
+    );
+  </action>
+  <events name="displayedVideoObjectEvents" keep="true" onremovedisplayedobject="displayedVideoObjectOnRemoveDisplayedObject"/>
+  <action name="displayedVideoObjectOnRemoveDisplayedObject">
+    ifnot(layer[displayedStandardVideo].currentCall,
+      if(layer[displayedStandardVideo].visible,
+        layer[displayedStandardVideo].stop();
+        ifnot(layer[displayedStandardVideo].fromdesktop,
+          removelayer(displayedStandardVideoOverlayButton);
+          removelayer(displayedStandardVideoOverlay);
+        );
+        set(layer[displayedStandardVideo].visible , false);
+        if(layer[displayedStandardVideo].overlay,set(layer[displayedStandardVideoOverlayBkg].visible, false););resumeautorotation(forcehotspot);
+
+        delete(tour_current_played_video);
+        set(tour_current_played_video, null);
+        set(tour_current_played_video_state, 0);
+        if(layer[displayedStandardVideo].pausebgsound,
+          resumeTourSoundsActions(true,true,true,true,true);
+        );
+        if(layer[displayedStandardVideo].overlay,removelayer(displayedStandardVideoOverlayBkg););
+        removelayer(displayedStandardVideo);
+      );
+    );
+  </action>
+
+  <!-- Sounds Management -->
+  <plugin name="soundinterface"
+          preload="true"
+          url.flash="%SWFPATH%/graphics/soundinterface.swf"
+          url.html5="%FIRSTXML%/graphics/soundinterface.js"
+          rootpath="%$videos_sounds_path%/sounds"
+          backgroundsound=""
+          backgroundsoundloops="0"
+          bgsound="false"
+          bgsoundpaused="false"
+          bgsoundloopended="false"
+          bgsoundtoforce = "false"
+          volumeinitialized="false"
+          started="true"
+          keep="true"/>
+  <events name="soundmanagementevents"
+          onnewpano="if(plugin[soundinterface].started,playbackgroundsound(););"
+          onxmlcomplete="soundinterfaceonxmlcomplete();"
+          keep="true"/>
+  <action name="soundinterfaceonxmlcomplete">
+    ifnot(plugin[soundinterface].volumeinitialized,
+      div(plugin[soundinterface].volume, tour_soundsvolume, 100);
+      set(plugin[soundinterface].volumeinitialized,true);
+    );
+  </action>
+  <action name="playsound3Dwhenpossible">
+    set(really_play_sound, true);
+    if (tour_current_played_sound,
+      if (%1 == tour_current_played_sound,
+        delete(tour_current_played_sound);
+        set(tour_current_played_sound_state, 0);
+        delete(tour_current_played_sound_paused);
+        stopsound(%1);
+        set(really_play_sound, false);
+        if(%4,
+          delete(tour_current_played_sound_pausesound);
+          resumeTourSoundsActions(true,true,true,true,true);
+        );
+      );
+    );
+    if (really_play_sound,
+      if (tour_current_played_sound,
+        stopsound(get(tour_current_played_sound));
+
+        ifnot(%4,
+          if(tour_current_played_sound_pausesound,
+            delete(tour_current_played_sound_pausesound);
+            resumeTourSoundsActions(true,true,true,true,true);
+          );
+        );
+      );
+      if(%4,
+        set(tour_current_played_sound_pausesound, true);
+        pauseTourSoundsActions(true,false,true,true,true);
+      );
+      set(tour_current_played_sound, %1);
+      if(tour_current_played_video,
+        set(tour_current_played_sound_state, 2);
+      ,
+        set(tour_current_played_sound_state, 1);
+      );
+      set(tour_current_played_sound_paused, false);
+      if (%3,
+        if (device.flash,
+          div(volume, tour_soundsvolume, 100);
+          if(%9 != null,
+            playsound3D(%1,%2,%5,%6,%7,get(volume),%8,stopsound3Dwhenpossible(%1,%4));
+          ,
+            playsound3D(%1,%2,%5,%6,%7,get(volume),%8);
+          );
+        ,
+          if(%9 != null,
+            playsound(%1,%2,%8,stopsound3Dwhenpossible(%1,%4));
+          ,
+            playsound(%1,%2,%8);
+          );
+        );
+      ,
+        if(%6 != null,
+          playsound(%1,%2,%5,stopsound3Dwhenpossible(%1,%4));
+        ,
+          playsound(%1,%2,%5);
+        );
+      );
+
+      ifnot(tour_soundson,
+        set(tour_current_played_sound_paused, true);
+        pausesound(%1);
+      );
+    );
+  </action>
+  <action name="stopsound3Dwhenpossible">
+    if (%1 == tour_current_played_sound,
+      delete(tour_current_played_sound);
+      set(tour_current_played_sound_state, 0);
+      delete(tour_current_played_sound_paused);
+
+      ifnot(device.safari,
+        stopsound(%1);
+      );
+      if(%2,
+        delete(tour_current_played_sound_pausesound);
+        resumeTourSoundsActions(true,true,true,true,true);
+      );
+    );
+  </action>
+  <action name="playbackgroundsound">
+  if(playsound,
+    if (xml.scene,
+      if (scene[get(xml.scene)].backgroundsound,
+        if (plugin[soundinterface].backgroundsound != scene[get(xml.scene)].backgroundsound,
+          copy(plugin[soundinterface].backgroundsound, scene[get(xml.scene)].backgroundsound);
+          copy(plugin[soundinterface].backgroundsoundloops, scene[get(xml.scene)].backgroundsoundloops);
+          if (tour_soundson,
+            set(plugin[soundinterface].bgsound, true);
+            set(plugin[soundinterface].bgsoundpaused, false);
+            set(plugin[soundinterface].bgsoundloopended, false);
+            set(plugin[soundinterface].bgsoundtoforce, false);
+            if(scene[get(xml.scene)].video == false OR (scene[get(xml.scene)].video == true AND scene[get(xml.scene)].scenevideomute == true),
+              if(plugin[soundinterface].backgroundsoundloops GT 0,
+                playsound(bgsoundname, get(plugin[soundinterface].backgroundsound), get(plugin[soundinterface].backgroundsoundloops), stopbackgroundsoundoncomplete());
+              ,
+                playsound(bgsoundname, get(plugin[soundinterface].backgroundsound), get(plugin[soundinterface].backgroundsoundloops));
+              );
+            );
+           ,
+            set(plugin[soundinterface].bgsoundtoforce, true);
+            set(plugin[soundinterface].bgsound, false);
+          );
+        ,
+          if (tour_soundson,
+            if((plugin[soundinterface].bgsoundpaused == true AND scene[get(xml.scene)].video == false) OR (scene[get(xml.scene)].video == true AND scene[get(xml.scene)].scenevideomute == true),
+              resumesound(bgsoundname);
+              set(plugin[soundinterface].bgsoundpaused, false);
+            );
+          ,
+            set(plugin[soundinterface].bgsoundtoforce, true);
+            set(plugin[soundinterface].bgsound, false);
+          );
+        );
+      );
+    );
+  ,
+    delayedcall(0.2, playbackgroundsound());
+  );
+  </action>
+  <action name="stopbackgroundsoundoncomplete">
+    if (plugin[soundinterface].backgroundsound,
+    if (plugin[soundinterface].backgroundsoundloops GT 0,
+
+      set(plugin[soundinterface].backgroundsoundloops, 0);
+      set(plugin[soundinterface].bgsound, false);
+      set(plugin[soundinterface].bgsoundpaused, false);
+      set(plugin[soundinterface].bgsoundloopended, true);
+    );
+    );
+  </action>
+  <action name="resetbackgroundsoundifneeded">
+    if (xml.scene,
+      if (scene[get(xml.scene)].backgroundsound != scene[%1].backgroundsound,
+        if(plugin[soundinterface].backgroundsound,
+          stopsound(bgsoundname);
+        );
+        set(plugin[soundinterface].backgroundsound, "");
+        set(plugin[soundinterface].backgroundsoundloops, 0);
+        set(plugin[soundinterface].bgsound, false);
+        set(plugin[soundinterface].bgsoundpaused, false);
+        set(plugin[soundinterface].bgsoundloopended, false);
+      );
+    );
+  </action>
+  <action name="pausebackgroundsound">
+    if(plugin[soundinterface].backgroundsound,
+      if (plugin[soundinterface].bgsound,
+        if(plugin[soundinterface].bgsoundpaused == false AND plugin[soundinterface].bgsoundloopended == false,
+          pausesound(bgsoundname);
+          set(plugin[soundinterface].bgsoundpaused, true);
+        );
+      );
+    );
+    
+  </action>
+  <action name="resumebackgroundsound">
+    set(bgSoundOnResume, true);
+    set(forceBgSoundOnResume, true);
+    if(layer[displayedStandardVideo],
+    if(layer[displayedStandardVideo].pausebgsound AND tour_current_played_video,
+      set(bgSoundOnResume, false);
+      set(forceBgSoundOnResume, false);
+    ););
+    if(layer[webvideodisplay_player],
+    if(layer[webvideodisplay_player].pausebgsound AND tour_current_played_web_video,
+      set(bgSoundOnResume, false);
+      set(forceBgSoundOnResume, false);
+    ););
+    if(tour_current_played_sound_pausesound AND tour_current_played_sound,
+      set(bgSoundOnResume, false);
+    );
+    ifnot(plugin[soundinterface].backgroundsound AND scene[get(xml.scene)].backgroundsound,
+      set(bgSoundOnResume, false);
+    );
+    if(videospots_playing GT 0,
+      set(bgSoundOnResume, false);
+      set(forceBgSoundOnResume, false);
+    );
+    if(bgSoundOnResume,
+      if (plugin[soundinterface].backgroundsound,
+        if (tour_soundson,
+          if (plugin[soundinterface].bgsound AND plugin[soundinterface].bgsoundloopended == false,
+            if((plugin[soundinterface].bgsoundpaused == true AND scene[get(xml.scene)].video == false) OR (scene[get(xml.scene)].video == true AND scene[get(xml.scene)].scenevideomute == true),
+              resumesound(bgsoundname);
+              set(plugin[soundinterface].bgsoundpaused, false);
+            ,
+
+              if(device.mobile OR device.tablet OR device.safari OR device.chrome,
+                resumesound(bgsoundname);
+                set(plugin[soundinterface].bgsoundpaused, false);
+              );
+            );
+          ,
+            if(((plugin[soundinterface].bgsoundpaused == true OR plugin[soundinterface].bgsoundtoforce == true) AND scene[get(xml.scene)].video == false) OR (scene[get(xml.scene)].video == true AND scene[get(xml.scene)].scenevideomute == true),
+              set(plugin[soundinterface].bgsound, true);
+              set(plugin[soundinterface].bgsoundpaused, false);
+              set(plugin[soundinterface].bgsoundloopended, false);
+              set(plugin[soundinterface].bgsoundtoforce, false);
+              if(plugin[soundinterface].backgroundsoundloops GT 0,
+                playsound(bgsoundname, get(plugin[soundinterface].backgroundsound), get(plugin[soundinterface].backgroundsoundloops), stopbackgroundsoundoncomplete());
+              ,
+                playsound(bgsoundname, get(plugin[soundinterface].backgroundsound), get(plugin[soundinterface].backgroundsoundloops));
+              );
+            );
+          );
+        );
+      );
+      
+    ,
+      if(forceBgSoundOnResume,
+        playbackgroundsound();
+        
+      );
+    );
+  </action>
+  <action name="preloadSounds">
+    preloadsound("_10911079109910821072.mp3");
+    preloadsound("_02-108710831072108210721090_10891083107710741072_45_10751077108810861080109510771089108210801093_1076108510771081_1090109110831072.mp3");
+    preloadsound("_03-108710831072108210721090_10901091108311001089108210801081_1088107210731086109510801081_1087108610831082_1090109110831072.mp3");
+    preloadsound("_04-108710831072108210721090_109010881077109710771074_1090109110831072.mp3");
+    preloadsound("_05-108710831072108210721090_10851072_10921088108610851090_10891086_10961082108610831100108510861081_108910821072108411001080.mp3");
+    preloadsound("_0007.mp3");
+    preloadsound("_0008.mp3");
+    preloadsound("_0009.mp3");
+    preloadsound("_0010.mp3");
+    preloadsound("_0011.mp3");
+    preloadsound("_0001.mp3");
+    preloadsound("_0002.mp3");
+    preloadsound("_0003.mp3");
+    preloadsound("_0004.mp3");
+    preloadsound("_0006.mp3");
+    preloadsound("_0005.mp3");
+    preloadsound("_06-1074108010901088108010851072_1090109110831072.mp3");
+    preloadsound("_01_10891074107710901086107410721103_108710721085107710831100_1090109110831072.mp3");
+  </action>
+
+  <action name="play3DLocalSounds">
+    if (xml.scene, if (scene[get(xml.scene)].haslocalsounds, playpanolocalsounds();););
+  </action>
+  <action name="stop3DLocalSounds">
+    if (xml.scene, if (scene[get(xml.scene)].haslocalsounds, stoppanolocalsounds();););
+  </action>
+  <action name="resume3DLocalSounds">
+    if (xml.scene, if (scene[get(xml.scene)].haslocalsounds, 
+      set(kill3dSoundOnResume, true);
+      if(layer[displayedStandardVideo],
+      if(layer[displayedStandardVideo].pausebgsound,
+      if(tour_current_played_video,
+        set(kill3dSoundOnResume, false);
+      );););
+      if(layer[webvideodisplay_player],
+      if(layer[webvideodisplay_player].pausebgsound,
+      if(tour_current_played_web_video,
+        set(kill3dSoundOnResume, false);
+      );););
+      if(tour_current_played_sound_pausesound,
+      if(tour_current_played_sound,
+        set(kill3dSoundOnResume, false);
+      ););
+      if(kill3dSoundOnResume,
+        resumepanolocalsounds();
+      );
+    ););
+  </action>
+  <action name="pause3DLocalSounds">
+    if (xml.scene, if (scene[get(xml.scene)].haslocalsounds, pausepanolocalsounds();););
+  </action>
+  <action name="set3DLocalSoundsVolume">
+    if (xml.scene, if (scene[get(xml.scene)].haslocalsounds, setpanolocalsoundsvolume();););
+  </action>
+  <action name="playTourSounds">
+    set(tour_soundson, true);events.dispatch(playtoursoundsevent);
+    resumeTourSoundsActions(true,true,true,true,true);
+  </action>
+  <action name="stopTourSounds">
+    set(tour_soundson, false);events.dispatch(stoptoursoundsevent);
+    pauseTourSoundsActions(true,true,true,true,true);
+  </action>
+  <action name="setTourSoundsVolume">
+    set(tour_soundsvolume, %1);events.dispatch(changetoursoundsevent);
+    div(volume, tour_soundsvolume, 100);
+    set(plugin[soundinterface].volume, get(volume));
+    set3DLocalSoundsVolume();
+  </action>
+  <action name="playTourSoundsActions">
+    if(%1,
+      if(plugin[soundinterface],
+        if(plugin[soundinterface].started,
+        play3DLocalSounds();
+        );
+      );
+    );
+    if(%2,
+      if(plugin[soundinterface],
+        if(plugin[soundinterface].started,
+          resumebackgroundsound();
+        );
+      );
+    );
+  </action>
+  <action name="stopTourSoundsActions">
+    if(%1,
+      stop3DLocalSounds();
+    );
+    if(%2,
+      stopSoundActionsSounds();
+    );
+    if(%3,
+      stopVideoActionsSounds();
+    );
+    if(%4,
+      pausebackgroundsound();
+    );
+  </action>
+  <action name="resumeTourSoundsActions">
+    if(%1,
+      if(plugin[soundinterface],
+        if(plugin[soundinterface].started,
+        resume3DLocalSounds();
+        );
+      );
+    );
+    if(%2,
+      resumeSoundActionsSounds();
+    );
+    if(%3,
+      resumeVideoActionsSounds();
+    );
+    if(%4,
+      if(%5,
+        if(plugin[soundinterface],
+          if(plugin[soundinterface].started,
+            resumebackgroundsound();
+          );
+        );
+      ,
+        pausebackgroundsound();
+      );
+    );
+  </action>
+  <action name="pauseTourSoundsActions">
+    if(%1,
+      pause3DLocalSounds();
+    );
+    if(%2,
+      pauseSoundActionsSounds();
+    );
+    if(%3,
+      pauseVideoActionsSounds();
+    );
+    if(%4,
+      if(%5,
+        pausebackgroundsound();
+      ,
+        if(plugin[soundinterface],
+          if(plugin[soundinterface].started,
+            resumebackgroundsound();
+          );
+        );
+      );
+    );
+  </action>
+  <action name="stopSoundActionsSounds">
+    if (tour_current_played_sound,
+      delete(tour_current_played_sound_paused);
+      stopsound(get(tour_current_played_sound));
+      delete(tour_current_played_sound);
+      set(tour_current_played_sound_state, 0);
+    );
+  </action>
+  <action name="stopVideoActionsSounds">
+    if(tour_current_played_video,
+      if(layer[displayedStandardVideo],
+        layer[displayedStandardVideo].stop();
+        removelayer(displayedStandardVideo);
+        if(layer[displayedStandardVideoOverlayButton], removelayer(displayedStandardVideoOverlayButton); );
+        if(layer[displayedStandardVideoOverlay], removelayer(displayedStandardVideoOverlay); );
+        delete(tour_current_played_video);
+        set(tour_current_played_video_state, 0);
+      );
+    );
+    if(tour_current_played_web_video,
+      displayWebVideoObjectClose();
+    );
+  </action>
+  <action name="resumeSoundActionsSounds">
+    if (tour_current_played_sound,
+      set(resumeSoundActionsVerification, true);
+      if(tour_current_played_video,
+        if(tour_current_played_sound_state LT tour_current_played_video_state,
+          set(resumeSoundActionsVerification, false);
+        );
+      );
+      if(resumeSoundActionsVerification,
+        if (tour_soundson,
+          if(tour_current_played_sound_paused,
+            set(tour_current_played_sound_paused, false);
+            resumesound(get(tour_current_played_sound));
+          ,
+
+            if(device.mobile OR device.tablet OR device.safari OR device.chrome,
+              set(tour_current_played_sound_paused, false);
+              resumesound(get(tour_current_played_sound));
+            );
+          );
+        );
+      );
+    );
+  </action>
+  <action name="resumeVideoActionsSounds">
+    if(tour_current_played_video,
+      set(resumeVideoActionsVerification, true);
+      if(tour_current_played_sound,
+        if(tour_current_played_video_state LT tour_current_played_sound_state,
+          set(resumeVideoActionsVerification, false);
+        );
+      );
+      if(resumeVideoActionsVerification,
+        if (tour_soundson,
+          if(device.flash OR (device.webgl AND !device.ios),
+            div(volume, tour_soundsvolume, 100);
+            set(layer[displayedStandardVideo].volume, get(volume));
+          ,
+            ifnot(device.ios,
+              js(kpanotour.Sounds.startVideosSounds(get(volume)));
+            ,
+              if(tour_soundsvolume GT 0,
+                set(layer[displayedStandardVideo].muted, false);
+              ,
+                set(layer[displayedStandardVideo].muted, true);
+              );
+            );
+          );
+        ,
+          if(device.flash OR (device.webgl AND !device.ios),
+            set(layer[displayedStandardVideo].volume, 0);
+          ,
+            ifnot(device.ios,
+              js(kpanotour.Sounds.stopVideosSounds());
+            ,
+              set(layer[displayedStandardVideo].muted, true);
+            );
+          );
+        );
+      );
+    );
+  </action>
+  <action name="pauseSoundActionsSounds">
+    if (tour_current_played_sound,
+      ifnot(tour_current_played_sound_paused,
+        set(tour_current_played_sound_paused, true);
+        pausesound(get(tour_current_played_sound));
+      );
+    );
+  </action>
+  <action name="pauseVideoActionsSounds">
+    if(tour_current_played_video,
+      if(device.flash OR (device.webgl AND !device.ios),
+        set(layer[displayedStandardVideo].volume, 0);
+      ,
+        ifnot(device.ios,
+          js(kpanotour.Sounds.stopVideosSounds());
+        ,
+          set(layer[displayedStandardVideo].muted, true);
+        );
+      );
+    );
+  </action>
+
+</krpano>

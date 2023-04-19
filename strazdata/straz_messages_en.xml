@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<krpano>
+
+<!-- ************************ -->
+<!--         Messages         -->
+<!-- ************************ -->
+
+  <data name="en_project_title"><![CDATA[strazh]]></data>
+  <data name="en_project_author_name"><![CDATA[SergeyKhodakovskiy]]></data>
+  <data name="en_project_author_url"><![CDATA[http://www.fotus.ru]]></data>
+
+
+
+  <data name="en_pano4745_title"><![CDATA[m001]]></data>
+  <data name="en_spotpoint4759_tooltip"><![CDATA[ГБОУ г.Москвы "Школа N 1430 им. Г.В. Кисунько"]]></data>
+  <data name="en_spotpoint4760_tooltip"><![CDATA[МБОУ "Центр образования N 25" г. Тулы]]></data>
+
+
+  <data name="en_pano354_title"><![CDATA[волгоград]]></data>
+  <data name="en_spotpoint360_tooltip"><![CDATA[вернуться]]></data>
+
+
+  <data name="en_pano4828_title"><![CDATA[москва-1]]></data>
+
+
+  <data name="en_pano6472_title"><![CDATA[002P]]></data>
+  <data name="en_spotpoint6771_tooltip"><![CDATA[витрина]]></data>
+
+
+  <data name="en_pano6473_title"><![CDATA[003P]]></data>
+  <data name="en_spotpoint6774_tooltip"><![CDATA[витрина]]></data>
+
+
+  <data name="en_pano6474_title"><![CDATA[004P]]></data>
+  <data name="en_spotpoint6775_tooltip"><![CDATA[витрина]]></data>
+
+
+  <data name="en_pano6475_title"><![CDATA[005P]]></data>
+
+
+  <data name="en_pano6476_title"><![CDATA[006P]]></data>
+
+
+  <data name="en_pano6477_title"><![CDATA[007P]]></data>
+
+
+  <data name="en_pano6478_title"><![CDATA[008P]]></data>
+
+
+  <data name="en_pano6479_title"><![CDATA[009P]]></data>
+
+
+  <data name="en_pano6594_title"><![CDATA[006P-T]]></data>
+
+
+  <data name="en_pano6685_title"><![CDATA[москва-2]]></data>
+
+
+  <data name="en_pano6722_title"><![CDATA[москва-3]]></data>
+
+
+
+
+
+
+  <data name="en_CirclesControlBaropenFsTip"><![CDATA[Enter fullscreen]]></data>
+  <data name="en_CirclesControlBarcloseFsTip"><![CDATA[Exit fullscreen]]></data>
+  <data name="en_CirclesControlBarsoundsOnTip"><![CDATA[Start sounds]]></data>
+  <data name="en_CirclesControlBarsoundsOffTip"><![CDATA[Stop sounds]]></data>
+  <data name="en_galleryplay_text"><![CDATA[Play / Pause]]></data>
+  <data name="en_gallerynavprev_text"><![CDATA[Previous]]></data>
+  <data name="en_gallerynavnext_text"><![CDATA[Next]]></data>
+  <data name="en_galleryfullscreen_text"><![CDATA[Fullscreen mode]]></data>
+  <data name="en_galleryclose_text"><![CDATA[Close]]></data>
+  <data name="en_gallerypicture_title0"><![CDATA[]]></data>
+  <data name="en_gallerypicture_caption0"><![CDATA[]]></data>
+  <data name="en_gallerypicture_title1"><![CDATA[]]></data>
+  <data name="en_gallerypicture_caption1"><![CDATA[]]></data>
+  <data name="en_gallerypicture_title2"><![CDATA[]]></data>
+  <data name="en_gallerypicture_caption2"><![CDATA[]]></data>
+  <data name="en_gallerypicture_title3"><![CDATA[]]></data>
+  <data name="en_gallerypicture_caption3"><![CDATA[]]></data>
+  <data name="en_gallerypicture_title4"><![CDATA[]]></data>
+  <data name="en_gallerypicture_caption4"><![CDATA[]]></data>
+  <data name="en_gallerypicture_title5"><![CDATA[]]></data>
+  <data name="en_gallerypicture_caption5"><![CDATA[]]></data>
+  <data name="en_gallerypicture_title6"><![CDATA[]]></data>
+  <data name="en_gallerypicture_caption6"><![CDATA[]]></data>
+  <data name="en_gallerypicture_title7"><![CDATA[]]></data>
+  <data name="en_gallerypicture_caption7"><![CDATA[]]></data>
+  <data name="en_gallerypicture_title8"><![CDATA[]]></data>
+  <data name="en_gallerypicture_caption8"><![CDATA[]]></data>
+  <data name="en_gallerypicture_title10"><![CDATA[]]></data>
+  <data name="en_gallerypicture_caption10"><![CDATA[]]></data>
+  <data name="en_gallerypicture_title9"><![CDATA[]]></data>
+  <data name="en_gallerypicture_caption9"><![CDATA[]]></data>
+  <data name="en_gallerypicture_title11"><![CDATA[]]></data>
+  <data name="en_gallerypicture_caption11"><![CDATA[]]></data>
+  <data name="en_gallery1play_text"><![CDATA[Play / Pause]]></data>
+  <data name="en_gallery1navprev_text"><![CDATA[Previous]]></data>
+  <data name="en_gallery1navnext_text"><![CDATA[Next]]></data>
+  <data name="en_gallery1fullscreen_text"><![CDATA[Fullscreen mode]]></data>
+  <data name="en_gallery1close_text"><![CDATA[Close]]></data>
+  <data name="en_gallerypicture_title4"><![CDATA[]]></data>
+  <data name="en_gallerypicture_caption4"><![CDATA[]]></data>
+  <data name="en_gallery1picture_title3"><![CDATA[]]></data>
+  <data name="en_gallery1picture_caption3"><![CDATA[]]></data>
+  <data name="en_gallery1picture_title4"><![CDATA[]]></data>
+  <data name="en_gallery1picture_caption4"><![CDATA[]]></data>
+  <data name="en_gallery1picture_title2"><![CDATA[]]></data>
+  <data name="en_gallery1picture_caption2"><![CDATA[]]></data>
+  <data name="en_gallery1picture_title1"><![CDATA[]]></data>
+  <data name="en_gallery1picture_caption1"><![CDATA[]]></data>
+  <data name="en_gallery1picture_title7"><![CDATA[]]></data>
+  <data name="en_gallery1picture_caption7"><![CDATA[]]></data>
+  <data name="en_gallery1picture_title6"><![CDATA[]]></data>
+  <data name="en_gallery1picture_caption6"><![CDATA[]]></data>
+  <data name="en_gallery1picture_title5"><![CDATA[]]></data>
+  <data name="en_gallery1picture_caption5"><![CDATA[]]></data>
+  <data name="en_gallery1picture_title9"><![CDATA[]]></data>
+  <data name="en_gallery1picture_caption9"><![CDATA[]]></data>
+  <data name="en_gallery1picture_title8"><![CDATA[]]></data>
+  <data name="en_gallery1picture_caption8"><![CDATA[]]></data>
+  <data name="en_gallery2play_text"><![CDATA[Play / Pause]]></data>
+  <data name="en_gallery2navprev_text"><![CDATA[Previous]]></data>
+  <data name="en_gallery2navnext_text"><![CDATA[Next]]></data>
+  <data name="en_gallery2fullscreen_text"><![CDATA[Fullscreen mode]]></data>
+  <data name="en_gallery2close_text"><![CDATA[Close]]></data>
+  <data name="en_gallery2picture_title6"><![CDATA[]]></data>
+  <data name="en_gallery2picture_caption6"><![CDATA[]]></data>
+  <data name="en_gallery2picture_title5"><![CDATA[]]></data>
+  <data name="en_gallery2picture_caption5"><![CDATA[]]></data>
+  <data name="en_gallery2picture_title3"><![CDATA[]]></data>
+  <data name="en_gallery2picture_caption3"><![CDATA[]]></data>
+  <data name="en_gallery2picture_title2"><![CDATA[]]></data>
+  <data name="en_gallery2picture_caption2"><![CDATA[]]></data>
+  <data name="en_gallery2picture_title4"><![CDATA[]]></data>
+  <data name="en_gallery2picture_caption4"><![CDATA[]]></data>
+  <data name="en_gallery2picture_title1"><![CDATA[]]></data>
+  <data name="en_gallery2picture_caption1"><![CDATA[]]></data>
+  <data name="en_gallery2picture_title7"><![CDATA[]]></data>
+  <data name="en_gallery2picture_caption7"><![CDATA[]]></data>
+  <data name="en_gallery3play_text"><![CDATA[Play / Pause]]></data>
+  <data name="en_gallery3navprev_text"><![CDATA[Previous]]></data>
+  <data name="en_gallery3navnext_text"><![CDATA[Next]]></data>
+  <data name="en_gallery3fullscreen_text"><![CDATA[Fullscreen mode]]></data>
+  <data name="en_gallery3close_text"><![CDATA[Close]]></data>
+  <data name="en_gallery3picture_title9"><![CDATA[]]></data>
+  <data name="en_gallery3picture_caption9"><![CDATA[]]></data>
+  <data name="en_gallery3picture_title1"><![CDATA[]]></data>
+  <data name="en_gallery3picture_caption1"><![CDATA[]]></data>
+  <data name="en_gallery3picture_title2"><![CDATA[]]></data>
+  <data name="en_gallery3picture_caption2"><![CDATA[]]></data>
+  <data name="en_gallery3picture_title7"><![CDATA[]]></data>
+  <data name="en_gallery3picture_caption7"><![CDATA[]]></data>
+  <data name="en_gallery3picture_title3"><![CDATA[]]></data>
+  <data name="en_gallery3picture_caption3"><![CDATA[]]></data>
+  <data name="en_gallery3picture_title4"><![CDATA[]]></data>
+  <data name="en_gallery3picture_caption4"><![CDATA[]]></data>
+  <data name="en_gallery3picture_title6"><![CDATA[]]></data>
+  <data name="en_gallery3picture_caption6"><![CDATA[]]></data>
+  <data name="en_gallery3picture_title5"><![CDATA[]]></data>
+  <data name="en_gallery3picture_caption5"><![CDATA[]]></data>
+  <data name="en_gallery4play_text"><![CDATA[Play / Pause]]></data>
+  <data name="en_gallery4navprev_text"><![CDATA[Previous]]></data>
+  <data name="en_gallery4navnext_text"><![CDATA[Next]]></data>
+  <data name="en_gallery4fullscreen_text"><![CDATA[Fullscreen mode]]></data>
+  <data name="en_gallery4close_text"><![CDATA[Close]]></data>
+  <data name="en_gallery4picture_title17"><![CDATA[]]></data>
+  <data name="en_gallery4picture_caption17"><![CDATA[]]></data>
+  <data name="en_gallery4picture_title1"><![CDATA[]]></data>
+  <data name="en_gallery4picture_caption1"><![CDATA[]]></data>
+  <data name="en_gallery4picture_title2"><![CDATA[]]></data>
+  <data name="en_gallery4picture_caption2"><![CDATA[]]></data>
+  <data name="en_gallery4picture_title3"><![CDATA[]]></data>
+  <data name="en_gallery4picture_caption3"><![CDATA[]]></data>
+  <data name="en_gallery4picture_title4"><![CDATA[]]></data>
+  <data name="en_gallery4picture_caption4"><![CDATA[]]></data>
+  <data name="en_gallery4picture_title5"><![CDATA[]]></data>
+  <data name="en_gallery4picture_caption5"><![CDATA[]]></data>
+  <data name="en_gallery4picture_title6"><![CDATA[]]></data>
+  <data name="en_gallery4picture_caption6"><![CDATA[]]></data>
+  <data name="en_gallery4picture_title7"><![CDATA[]]></data>
+  <data name="en_gallery4picture_caption7"><![CDATA[]]></data>
+  <data name="en_buttontooltip"><![CDATA[]]></data>
+  <data name="en_buttononclick102651openurlwebsiteurl"><![CDATA[https://schoolvictorymuseum.ru/school360]]></data>
+
+
+  <data name="en_vr_setup_hmd0"><![CDATA[SELECT YOUR HMD]]></data>
+  <data name="en_vr_setup_advanced"><![CDATA[ADVANCED SETTINGS]]></data>
+  <data name="en_vr_setup_title"><![CDATA[WEB VR SETTINGS]]></data>
+  <data name="en_vr_setup_dvn1"><![CDATA[Device:]]></data>
+  <data name="en_vr_setup_siz1"><![CDATA[Screen size:]]></data>
+  <data name="en_vr_setup_ipd1"><![CDATA[IPD:]]></data>
+  <data name="en_vr_setup_hmd1"><![CDATA[HMD:]]></data>
+  <data name="en_vr_setup_hmd3"><![CDATA[Customize]]></data>
+  <data name="en_vr_setup_cal"><![CDATA[Calibrate gyroscope]]></data>
+  <data name="en_vr_setup_sav"><![CDATA[SAVE]]></data>
+  <data name="en_vr_setup_rst"><![CDATA[RESET]]></data>
+  <data name="en_vr_setup_simple"><![CDATA[SIMPLE]]></data>
+  <data name="en_vr_setup_cls"><![CDATA[CLOSE]]></data>
+  <data name="en_vr_setup_m31"><![CDATA[HMD SETTINGS]]></data>
+  <data name="en_vr_setup_fov1"><![CDATA[FOV:]]></data>
+  <data name="en_vr_setup_dst1"><![CDATA[Distortion:]]></data>
+  <data name="en_vr_setup_d2tx"><![CDATA[Distortion 2:]]></data>
+  <data name="en_vr_setup_vig1"><![CDATA[Vignette:]]></data>
+  <data name="en_vr_setup_cac1"><![CDATA[Chromatic aberration:]]></data>
+  <data name="en_vr_setup_olp1"><![CDATA[Overlap:]]></data>
+  <data name="en_vr_setup_m35"><![CDATA[RETURN]]></data>
+  <data name="en_vr_setup_cb1"><![CDATA[GYROSCOPE]]></data>
+  <data name="en_vr_setup_cb2"><![CDATA[Place the device on a flat and[br]stable surface and tab CALIBRATE[br]to correct a gyroscope drifting.]]></data>
+  <data name="en_vr_setup_cb3"><![CDATA[CALIBRATE]]></data>
+  <data name="en_vr_setup_cb4"><![CDATA[RESET]]></data>
+  <data name="en_vr_setup_cb5"><![CDATA[RETURN]]></data>
+  <data name="en_vr_setup_cb6"><![CDATA[Calibrating...]]></data>
+  <data name="en_vr_setup_cb7"><![CDATA[Successful calibration]]></data>
+  <data name="en_vr_setup_cb8"><![CDATA[Calibration failed]]></data>
+  <data name="en_vr_setup_unavailable"><![CDATA[VR mode[br]is unavailable on your device]]></data>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</krpano>
